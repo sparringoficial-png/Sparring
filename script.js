@@ -1,9 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById("whatsappBtn");
+document.addEventListener('DOMContentLoaded', function(){
+  const btn = document.getElementById('whatsappBtn');
 
-  // CAMBIÁ ESTE NÚMERO POR EL TUYO
-  const telefono = "549xxxxxxx"; // sin el +
+  // Reemplazá por tu número sin el +
+  const PHONE = '5491123456789'; // ej: 54911xxxxxxx
+  const TEXT = encodeURIComponent('Hola, quiero registrarme y obtener el bono en mi primer depósito.');
 
-  const mensaje = "Hola, quiero registrarme y obtener el bono.";
-  btn.href = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+  btn.href = `https://wa.me/${PHONE}?text=${TEXT}`;
+
+  // animación sutil de pulso
+  btn.animate([
+    { transform: 'translateY(0)' },
+    { transform: 'translateY(-6px)' },
+    { transform: 'translateY(0)' }
+  ], { duration: 2800, iterations: Infinity });
 });
